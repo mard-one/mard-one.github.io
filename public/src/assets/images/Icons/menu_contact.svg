@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-9320 -22851.25 25 19.475"><defs><style>.a{fill:#234056;}</style></defs><g transform="translate(-9320 -22851.249)"><g transform="translate(0 0)"><path class="a" d="M218.188,24.812V40.663H196.812V24.812h21.377m0-1.812H196.812A1.817,1.817,0,0,0,195,24.812V40.663a1.817,1.817,0,0,0,1.812,1.812h21.377A1.817,1.817,0,0,0,220,40.663V24.812A1.817,1.817,0,0,0,218.188,23Z" transform="translate(-195 -23)"/></g><path class="a" d="M207.5,47.658,195,43.6v1.92l12.5,3.949L220,45.52V43.6Z" transform="translate(-195 -39.868)"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 25 19.5" style="enable-background:new 0 0 25 19.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3399CC;}
+</style>
+<g transform="translate(-9320 -22851.249)">
+	<g transform="translate(0 0)">
+		<path class="st0" d="M9343.2,22853.1v15.9h-21.4v-15.9H9343.2 M9343.2,22851.3h-21.4c-1,0-1.8,0.8-1.8,1.8v15.9
+			c0,1,0.8,1.8,1.8,1.8h21.4c1,0,1.8-0.8,1.8-1.8v-15.9C9345,22852.1,9344.2,22851.3,9343.2,22851.3L9343.2,22851.3z"/>
+	</g>
+	<path class="st0" d="M9332.5,22859l-12.5-4.1v1.9l12.5,3.9l12.5-3.9v-1.9L9332.5,22859z"/>
+</g>
+</svg>

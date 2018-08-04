@@ -1,4 +1,5 @@
-export default function Canvas(){
+export default function Ccanvas(){
+  console.log('canvas');
   var canvas = document.querySelector('canvas'),
     c = canvas.getContext('2d'),
     particles = [],
@@ -58,13 +59,20 @@ export default function Canvas(){
     particles.push(new Particle(x, y, radius));
   }
 
-  window.addEventListener('mousedown', function() {
+  document.querySelector('#moon').addEventListener('mouseover', function(){
     md = 1;
-  });
-
-  window.addEventListener('mouseup', function() {
+  })
+  document.querySelector('#moon').addEventListener('mouseout', function(){
     md = 0;
-  });
+  })
+
+  // window.addEventListener('mousedown', function() {
+  //   md = 1;
+  // });
+
+  // window.addEventListener('mouseup', function() {
+  //   md = 0;
+  // });
 
   function animate() {
     requestAnimationFrame(animate);

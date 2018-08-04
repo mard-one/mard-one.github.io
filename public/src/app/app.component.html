@@ -1,1 +1,53 @@
-<router-outlet></router-outlet>
+<div id="navbar">
+  <div id="icon">
+    <a routerLink="/home" routerLinkActive="active">
+      <img src="../assets/images/Logos/Logo.svg" alt="icon">
+    </a>
+  </div>
+  <div id="menu">
+    <div id="menu_home" class="item_menu">
+      <a routerLink="/home" routerLinkActive="active">
+        <img src="../assets/images/Icons/menu_home.svg" alt="home">
+      </a>
+    </div>
+    <div id="menu_about" class="item_menu">
+      <a routerLink="/about" routerLinkActive="active">
+        <img src="../assets/images/Icons/menu_about.svg" alt="about">
+      </a>
+    </div>
+    <div id="menu_skill" class="item_menu">
+      <a routerLink="/skill" routerLinkActive="active">
+        <img src="../assets/images/Icons/menu_skill.svg" alt="skill">
+      </a>
+    </div>
+    <div id="menu_work" class="item_menu">
+      <a routerLink="/work" routerLinkActive="active">
+        <img src="../assets/images/Icons/menu_work.svg" alt="work">
+      </a>
+    </div>
+    <div id="menu_contact" class="item_menu">
+      <a routerLink="/contact" routerLinkActive="active">
+        <img src="../assets/images/Icons/menu_contact.svg" alt="contact">
+      </a>
+    </div>
+  </div>
+  <div id="socials">
+    <div id="social_github" class="item_social">
+      <a href="#">
+        <img src="../assets/images/Icons/social_github.svg" alt="github">
+      </a>
+    </div>
+    <div id="social_linkedIn" class="item_social">
+      <a href="#">
+        <img src="../assets/images/Icons/social_linkedIn.svg" alt="linkedIn">
+      </a>
+    </div>
+    <div id="social_facebook" class="item_social">
+      <a href="#">
+        <img src="../assets/images/Icons/social_facebook.svg" alt="facebook">
+      </a>
+    </div>
+  </div>
+</div>
+
+<router-outlet (activate)="onActivate()"></router-outlet>

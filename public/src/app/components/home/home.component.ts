@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import Canvas from '../../../assets/scripts/canvas.js';
+import canvas from '../../../assets/scripts/canvas.js';
+import typingEffect from '../../../assets/scripts/typingEffect.js';
+import parallax from '../../../assets/scripts/parallax.js';
+
 
 
 @Component({
@@ -8,11 +11,12 @@ import Canvas from '../../../assets/scripts/canvas.js';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    Canvas();
+    canvas();
+    typingEffect();
+    parallax();
   }
 
 }

@@ -1,3 +1,82 @@
-<p>
-  contact works!
-</p>
+<div id="contact_page">
+  <div class="content">
+    <h1>
+      Get in touch
+    </h1>
+    <p>
+      Need help, have a question or want to work together?
+    </p>
+  </div>
+  <div class="form">
+    <div class="wrap">
+      <form id='contact_form' [formGroup]="formContact" (submit)="contactSubmitHandler($event)">
+        <div class="input_wrap">
+          <div class="sub_group">
+            <input type="text" name="username" placeholder="Name" formControlName="username" [ngClass]="{ 
+                    'has_danger': formContact.controls.username.invalid && (formContact.controls.username.dirty || formContact.controls.username.touched)
+                  }" required>
+            <span class="focus_border"></span>
+            <!-- <ul class='hint'>
+              <li *ngIf='formContact.controls.username.errors?.required && (formContact.controls.username.dirty || formContact.controls.username.touched)'>
+                Name field is required
+              </li>
+              <li *ngIf='(formContact.controls.username.errors?.minlength || formContact.controls.username.errors?.maxlength && (formContact.controls.username.dirty || formContact.controls.username.touched))'>
+                Name must contain at least 3 charecters but no more than 15
+              </li>
+              <li *ngIf='formContact.controls.username.errors?.pattern && (formContact.controls.username.dirty || formContact.controls.username.touched)'>
+                Name must be valid and must not have any special charecters
+              </li>
+            </ul> -->
+          </div>
+          <div class="sub_group">
+            <input type="email" name="email" placeholder="Email" formControlName="email" [ngClass]="{
+                    'has_danger': formContact.controls.email.invalid && (formContact.controls.email.dirty || formContact.controls.email.touched)
+                  }">
+            <span class="focus_border"></span>
+            <!-- <ul class='hint'>
+              <li *ngIf='formContact.controls.email.errors?.required && (formContact.controls.email.dirty || formContact.controls.email.touched)'>
+                E-mail field is required
+              </li>
+              <li *ngIf='(formContact.controls.email.errors?.minlength || formContact.controls.email.errors?.maxlength && (formContact.controls.email.dirty || formContact.controls.email.touched))'>
+                E-mail must contain at least 5 charecters but no more than 30 {{formContact.controls.email.errors.pattern}}
+              </li>
+              <li *ngIf='formContact.controls.email.errors?.email && (formContact.controls.email.dirty || formContact.controls.email.touched)'>
+                E-mail must be valid
+              </li>
+            </ul> -->
+          </div>
+          <div class="sub_group">
+            <input type="text" name="subject" placeholder="Subject" formControlName="subject">
+            <span class="focus_border"></span>
+          </div>
+          <div class="sub_group">
+            <select name="source" class="option_holder" (change)="onChangeSelect($event)">
+              <option value="default" selected disabled hidden>Where did you find me?</option>
+              <option value="friend">Friend</option>
+              <option value="facebook">Facebook</option>
+              <option value="specific website">Specific website</option>
+              <option value="other">Other</option>
+              <option value="secret">I don't want to tell</option>
+            </select>
+            <span class="focus_border"></span>
+          </div>
+          <div class="sub_group textarea">
+            <textarea placeholder="Message" name="message" id="message_area" cols="50" rows="10" (change)="onChangeTextarea($event)"
+              (keyup)="onChangeTextarea($event)" formControlName="message"></textarea>
+            <span class="focus_border"></span>
+          </div>
+        </div>
+        <div class="button_wrap">
+          <button type="submit">
+            <p>
+              SUBMIT
+            </p>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="hint" style='visibility: hidden'>
+    <span>{{hintMessage}}</span>
+  </div>
+</div>

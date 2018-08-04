@@ -1,3 +1,84 @@
-<p>
-  work works!
-</p>
+<div id="work_page">
+  <div id="project_list">
+    <ul>
+      <li>
+        <div #project1 class="project_link active" (click)="selected(project1)" data-list-index='0'>
+          <span class='title'>
+            Cool project
+          </span>
+          <small class='description'>
+            Super useful description
+          </small>
+          <div class="triangle" style="background-color: #47b9f5"></div>
+        </div>
+      </li>
+      <li>
+        <div #project2 class="project_link" (click)="selected(project2)" data-list-index='1'>
+          <span class='title'>
+            Awesome project
+          </span>
+          <small class='description'>
+            Super beneficial description
+          </small>
+          <div class="triangle" style="background-color: #71ADB9"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="project_detail">
+    <div class="specific_project project1 active" style="background-color: #47b9f5" data-detail-index='0'>
+      <div class="project_info">
+        <div class="wrap">
+          <h2>
+            Cool project
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nisi voluptatibus magnam exercitationem quam hic fugiat quasi
+            numquam voluptas laudantium neque, odio consectetur itaque odit minus consequuntur, voluptates natus est.
+          </p>
+          <button id="visit_website">
+            <p>
+              Visit the website
+            </p>
+          </button>
+          <button id="discover_process">
+            <p>
+              Discover the process
+            </p>
+          </button>
+        </div>
+      </div>
+      <div class="project_photo">
+        <img src='../assets/images/project1.svg' alt="">
+      </div>
+    </div>
+    <div class="specific_project project2" style="background-color: #71ADB9" data-detail-index='1'>
+      <div class="project_info">
+        <div class="wrap">
+          <h2>
+            Awesome project
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nisi voluptatibus magnam exercitationem quam hic fugiat quasi
+            numquam voluptas laudantium neque, odio consectetur itaque odit minus consequuntur, voluptates natus est. Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Saepe sed, sapiente totam similique quis alias delectus, incidunt ipsa
+            ut beatae vero autem at cum accusantium repellat! Hic officia qui perspiciatis?
+          </p>
+          <button id="visit_website">
+            <p>
+              Visit the website
+            </p>
+          </button>
+          <button id="discover_process">
+            <p>
+              Discover the process
+            </p>
+          </button>
+        </div>
+      </div>
+      <div class="project_photo">
+        <img src='../assets/images/project2.png' alt="">
+      </div>
+    </div>
+  </div>
+</div>
