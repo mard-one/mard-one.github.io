@@ -4,7 +4,7 @@ import * as express from 'express';
 import * as nodemailer from 'nodemailer';
 import * as path from 'path';
 
-import * as config from './config/db';
+import * as config from './src/config/db';
 
 const app = express();
 
@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-app.use(cors({ origin: 'http://localhost:4200' }));
+// app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public/dist'));
