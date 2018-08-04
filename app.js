@@ -3,10 +3,10 @@ exports.__esModule = true;
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var express = require("express");
-var mongoose = require("mongoose");
+// var mongoose = require("mongoose");
 var nodemailer = require("nodemailer");
 var path = require("path");
-var config = require("./config/db");
+var config = require("./src/config/db");
 var app = express();
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -15,18 +15,19 @@ var transporter = nodemailer.createTransport({
         pass: config.pass
     }
 });
-mongoose.connect(config.database, function (err) {
-    if (err) {
-        console.log('Could NOT connect to database: ', err);
-    }
-    else {
-        console.log('Connected to database: ' + config.database);
-    }
-});
-app.use(cors({ origin: 'http://localhost:4200' }));
+// mongoose.connect(config.database, function (err) {
+//     if (err) {
+//         console.log('Could NOT connect to database: ', err);
+//     }
+//     else {
+//         console.log('Connected to database: ' + config.database);
+//     }
+// });
+// app.use(cors({ origin: 'http://localhost:4200' }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/client/dist'));
+app.use(express.static(__dirname + '/public/dist'));
 var router = express.Router();
 app.post('/getintouch', function (req, res) {
     var mailOptions = {
@@ -50,8 +51,8 @@ app.post('/getintouch', function (req, res) {
         }
     });
 });
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/dist/index.html'));
 });
 app.set('port', process.env.PORT || 8080);
 var server = app.listen(app.get('port'), function () {

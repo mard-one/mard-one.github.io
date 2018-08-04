@@ -19,6 +19,30 @@
   src: url('./assets/fonts/Championship.ttf');
 }
 
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-portrait-up {
+    @media (max-width: 899px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) and (max-width: 1799px) {
+      @content;
+    }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
 body {
   background-color: #0c232f;
   margin: 0;
@@ -27,7 +51,7 @@ body {
 }
 html,
 body {
-  min-height: 100% !important;
+  // min-height: 100% !important;
   height: 100%;
 }
 ::-webkit-scrollbar {
@@ -139,7 +163,7 @@ a {
     flex-flow: column;
     justify-content: center;
     position: absolute;
-    margin-left: 100px;
+    margin-left: 6.6666%;
     height: 100%;
     width: 500px;
     color: white;
@@ -193,20 +217,16 @@ a {
     #moon {
       z-index: 10;
       position: fixed;
-      width: 600px;
-      height: 600px;
-      top: 33.3%;
-      margin-top: -300px;
-      left: 75%;
-      margin-left: -300px;
+      width: 40%;
+      bottom: calc(100% / 3 * 2 - 20%);
+      right: 5%;
     }
     #man {
       z-index: 10;
       position: fixed;
-      width: 260px;
-      height: 550px;
-      top: 33.3%;
-      left: 75%;
+      height: calc(100% / 3 * 2);
+      bottom: 0;
+      right: 5%;
     }
   }
 }
@@ -222,9 +242,9 @@ a {
     flex-flow: column;
     justify-content: center;
     width: 40%;
-    margin: 0 100px;
+    margin: 0 6.66666%;
     h1 {
-      margin: 0 0 50px 0;
+      margin: 0 0 1em 0;
     }
   }
   .image {
@@ -248,13 +268,12 @@ a {
   display: flex;
   flex-flow: row;
   .content {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
     width: 55%;
-    margin: 0 100px;
+    margin: 0 6.6666%;
+    margin-top: auto;
+    margin-bottom: auto;
     h1 {
-      margin: 0 0 50px 0;
+      margin: 0 0 1em 0;
     }
     .highlighter {
       color: #49ecec;
@@ -267,7 +286,7 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     .skill_item {
-      padding: 30px;
+      padding: 2.2222%;
       .skill_type {
         font-size: 50px;
         font-family: 'Champ';
@@ -397,7 +416,8 @@ a {
       flex-flow: column;
       justify-content: center;
       .wrap {
-        margin: 0 100px;
+        margin: 0 6.6666%;
+
         width: 450px;
       }
       h2 {
@@ -452,9 +472,10 @@ a {
     flex-flow: column;
     justify-content: center;
     width: 55%;
-    margin: 0 100px;
+    margin: 0 6.6666%;
+
     h1 {
-      margin: 0 0 50px 0;
+      margin: 0 0 1em 0;
     }
   }
   .form {
@@ -470,7 +491,7 @@ a {
       display: flex;
       flex-flow: row;
       justify-content: center;
-      margin: 50px;
+      margin: 3.3333%;
     }
     form {
       width: 100%;
@@ -488,7 +509,7 @@ a {
         position: relative;
         display: flex;
         flex-flow: column;
-        .hint{
+        .hint {
           position: absolute;
           display: flex;
           flex-flow: column;
@@ -573,7 +594,7 @@ a {
       cursor: pointer;
       overflow: hidden;
       position: relative;
-      margin: 50px 0 0 auto;
+      margin: 3.333% 0 0 auto;
       &:after {
         background: #fff;
         content: '';
@@ -598,15 +619,130 @@ a {
       }
     }
   }
-  .hint{
+  .hint {
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 30px 50px;
+    margin: 2.2222% 3.3333%;
     padding: 10px 15px;
-    span{
+    span {
       font-family: 'G-Ultralight';
       color: white;
     }
+  }
+}
+@include for-size(phone-only) {
+
+  h1 {
+    font-size: 55px;
+    margin: 0 0 1em 0;
+  }
+}
+@include for-size(tablet-portrait-up) {
+  h1 {
+    font-size: 45px;
+    margin: 0 0 1em 0;
+  }
+  body {
+    margin-left: 0;
+  }
+  #navbar {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    flex-flow: row;
+    #icon {
+      height: auto;
+      margin-right: 6.666%;
+    }
+    #menu {
+      display: flex;
+      height: 100%;
+    }
+    #socials {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      .item_social {
+        padding: 0 5px;
+        &:last-of-type {
+          padding-bottom: 0;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  #moon {
+    display: none;
+  }
+  #man {
+    display: none;
+  }
+  #about_page {
+    flex-flow: column;
+    .content {
+      width: auto;
+      padding-top: 50px;
+    }
+  }
+  #work_page {
+    #project_list {
+      display: none;
+    }
+    #project_detail {
+      .project_info{
+        width: auto;
+        margin: 0 6.666%;
+      }
+      .project_photo {
+        display: none;
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+  #skill_page {
+    flex-flow: column;
+    .content {
+      width: auto;
+      padding-top: 50px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .skills {
+      margin: 6.6666%;
+      width: auto;
+      height: auto;
+      grid-template-rows: auto;
+    }
+  }
+  #contact_page {
+    flex-flow: column;
+    .content {
+      width: auto;
+      padding-top: 50px;
+    }
+    .form {
+      width: auto;
+      height: auto;
+      margin: 6.6666%;
+      .wrap {
+        margin: 0;
+      }
+    }
+  }
+}
+@include for-size(desktop-up) {
+  h1 {
+    font-size: 50px;
+    margin: 0 0 1em 0;
+  }
+}
+@include for-size(tablet-landscape-up) {
+  h1 {
+    font-size: 45px;
+    margin: 0 0 1em 0;
   }
 }

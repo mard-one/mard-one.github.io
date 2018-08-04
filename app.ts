@@ -1,8 +1,6 @@
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import * as express from 'express';
-import * as jwt from 'jsonwebtoken';
-import * as mongoose from 'mongoose';
 import * as nodemailer from 'nodemailer';
 import * as path from 'path';
 
@@ -18,18 +16,10 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-mongoose.connect(config.database, err => {
-  if (err) {
-    console.log('Could NOT connect to database: ', err);
-  } else {
-    console.log('Connected to database: ' + config.database);
-  }
-});
-
 app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/client/dist'));
+app.use(express.static(__dirname + '/public/dist'));
 const router = express.Router();
 
 app.post('/getintouch', (req, res) => {
@@ -63,7 +53,7 @@ app.post('/getintouch', (req, res) => {
 });
 
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+  res.sendFile(path.join(__dirname, 'public/dist/index.html'));
 });
 
 app.set('port', process.env.PORT || 8080);
