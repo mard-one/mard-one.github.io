@@ -27,7 +27,7 @@ var transporter = nodemailer.createTransport({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public/dist'));
+app.use(express.static(__dirname + '/client/dist'));
 var router = express.Router();
 app.post('/getintouch', function (req, res) {
     var mailOptions = {
@@ -52,7 +52,7 @@ app.post('/getintouch', function (req, res) {
     });
 });
 app.get('/', function (req, res) {
-    res.send(path.join(__dirname, 'dist', 'index.html'));
+    res.send(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 app.set('port', process.env.PORT || 8080);
 var server = app.listen(app.get('port'), function () {
