@@ -16,7 +16,6 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-// process.env.PWD = process.cwd();
 // mongoose.connect(config.database, function (err) {
 //     if (err) {
 //         console.log('Could NOT connect to database: ', err);
@@ -29,7 +28,7 @@ var transporter = nodemailer.createTransport({
 // app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(process.cwd(), 'client/dist')));
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
 var router = express.Router();
 app.post('/getintouch', function (req, res) {
     var mailOptions = {
@@ -54,7 +53,7 @@ app.post('/getintouch', function (req, res) {
     });
 });
 app.get('/', function (req, res) {
-    res.sendFile(path.join(process.cwd(), 'client/dist/index.html'));
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'), function () {
