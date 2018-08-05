@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_PATH=. node server.js"
+    "start": "node server.js"
   },
   "author": "Mardon Mashrabov",
   "license": "ISC",

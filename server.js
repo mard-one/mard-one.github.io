@@ -52,7 +52,7 @@ app.post('/getintouch', function (req, res) {
     });
 });
 app.get('/', function (req, res) {
-    res.send(path.join(__dirname, 'public', 'dist', 'index.html'));
+    res.send(path.join(__dirname, 'dist', 'index.html'));
 });
 app.set('port', process.env.PORT || 8080);
 var server = app.listen(app.get('port'), function () {
