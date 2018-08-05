@@ -23,8 +23,8 @@ var transporter = nodemailer.createTransport({
 //         console.log('Connected to database: ' + config.database);
 //     }
 // });
-// app.use(cors({ origin: 'http://localhost:4200' }));
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/client/dist'));
@@ -55,6 +55,6 @@ app.get('/', function (req, res) {
     res.send(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 app.set('port', process.env.PORT || 8080);
-var server = app.listen(app.get('port'), function () {
+app.listen(app.get('port'), function () {
     console.log('Listening on port ' + app.get('port'));
 });
