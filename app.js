@@ -27,7 +27,7 @@ var transporter = nodemailer.createTransport({
 // app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/client/dist'));
+app.use(express.static(path.join(process.env.PWD, '/client')));
 var router = express.Router();
 app.post('/getintouch', function (req, res) {
     var mailOptions = {
